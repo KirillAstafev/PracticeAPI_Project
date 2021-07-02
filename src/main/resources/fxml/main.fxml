@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.practice.controller.MainController">
+
+    <TabPane layoutX="6.0" layoutY="27.0" prefHeight="670.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Работа с соц.сетями">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="639.0" prefWidth="1186.0">
+                <TextField fx:id="usersNamesTextField" layoutX="665.0" layoutY="10.0" onAction="#searchUsersPhotosAction" prefHeight="25.0" prefWidth="250.0" promptText="имена пользователей" />
+                <Button fx:id="photoSearchButton" layoutX="915.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchUsersPhotosAction" />
+                <Button layoutX="956.0" layoutY="10.0" mnemonicParsing="false" onAction="#showUsersPhotosAction" prefHeight="25.0" prefWidth="222.0" text="ОТОБРАЗИТЬ ДАННЫЕ ИЗ ФАЙЛА" />
+                <ScrollPane layoutX="14.0" layoutY="39.0" prefHeight="596.0" prefWidth="1164.0">
+                    <GridPane fx:id="photoPane" style="-fx-background-color: gray;" />
+                </ScrollPane>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Курс доллара">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <LineChart fx:id="currencyLineChart" layoutX="33.0" layoutY="59.0" prefHeight="580.0" prefWidth="1154.0">
+                    <xAxis>
+                        <CategoryAxis label="Дата" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis prefHeight="518.0" prefWidth="27.0" side="LEFT" />
+                    </yAxis>
+                </LineChart>
+                <Button fx:id="usdSearchButton" layoutX="438.0" layoutY="24.0" onAction="#usdSearchAction" prefHeight="35.0" prefWidth="35.0">
+                </Button>
+                <DatePicker fx:id="usdDatePicker" layoutX="14.0" layoutY="24.0" prefHeight="35.0" prefWidth="414.0" />
+                <Button layoutX="491.0" layoutY="24.0" mnemonicParsing="false" onAction="#showCurrencyDataAction" prefHeight="34.0" prefWidth="223.0" text="ОТОБРАЗИТЬ ДАННЫЕ ИЗ ФАЙЛА" />
+            </AnchorPane>
+        </Tab>
+        <Tab text="Прогноз погоды">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="1100.0">
+                <Button fx:id="weatherSearchButton" layoutX="424.0" layoutY="24.0" mnemonicParsing="false" onAction="#searchWeatherAction" prefHeight="35.0" prefWidth="35.0" />
+                <Button layoutX="955.0" layoutY="25.0" mnemonicParsing="false" onAction="#showWeatherDataAction" prefHeight="34.0" prefWidth="223.0" text="ОТОБРАЗИТЬ ДАННЫЕ ИЗ ФАЙЛА" />
+                <LineChart fx:id="weatherLineChart" layoutX="2.0" layoutY="59.0" prefHeight="580.0" prefWidth="1192.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                </LineChart>
+                <TextField fx:id="cityTextField" layoutX="105.0" layoutY="24.0" prefHeight="35.0" prefWidth="308.0" />
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+    <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="1200.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem accelerator="Ctrl+X" mnemonicParsing="false" onAction="#exitMenuItemAction" text="Close" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About" />
+        </Menu>
+    </MenuBar>
+</AnchorPane>
